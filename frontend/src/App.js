@@ -48,7 +48,8 @@ function App() {
     setLoading(true);
     try {
       const res = await api.get("/products");
-      setProducts(res.data);
+      setProducts(res.data.data);
+      console.log("Fetched products:", res.data.data);
       setError("");
     } catch (err) {
       setError("Failed to fetch products");
@@ -62,7 +63,8 @@ function App() {
       setLoading(true);
       try {
         const res = await api.get("/products");
-        setProducts(res.data);
+        setProducts(res.data.data);
+        console.log("Fetched products:", res.data.data);
         setError("");
       } catch (err) {
         setError("Failed to fetch products");
