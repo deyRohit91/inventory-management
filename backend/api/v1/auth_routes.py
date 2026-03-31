@@ -5,7 +5,10 @@ from models.user import UserCreate
 from repository import user_repo
 from core.auth import hash_password, verify_password, create_access_token
 
-router = APIRouter()
+router = APIRouter(
+    prefix="/auth",
+    tags=["v1 - Auth"]        
+)
 
 @router.post("/register")
 def register(user: UserCreate, db: Session = Depends(get_db)):

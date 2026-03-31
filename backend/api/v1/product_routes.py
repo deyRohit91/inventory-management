@@ -7,7 +7,10 @@ from core.auth import get_current_user
 from models.product import Product
 from repository import product_repo
 
-router = APIRouter()
+router = APIRouter(
+    
+    tags=["v1 - Products"]
+)
 
 
 # CREATE PRODUCT
